@@ -676,7 +676,7 @@ compile hfield.c hfield.h
 	./compile hfield.c
 
 hier.o: \
-compile hier.c auto_qmail.h auto_split.h auto_uids.h fmt.h fifo.h
+compile hier.c auto_split.h auto_uids.h fmt.h fifo.h
 	./compile $(DEFINES) hier.c
 
 home: \
@@ -726,8 +726,7 @@ strerr.a substdio.a open.a error.a str.a fs.a
 	strerr.a substdio.a open.a error.a str.a fs.a
 
 install-big.o: \
-compile install-big.c auto_qmail.h auto_split.h auto_uids.h fmt.h \
-fifo.h
+compile install-big.c auto_split.h auto_uids.h fmt.h fifo.h
 	./compile $(DEFINES) install-big.c
 
 install.o: \
