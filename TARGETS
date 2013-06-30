@@ -388,3 +388,4 @@ qmail-todo.o
 qmail-todo
 syncdir.o
 libsyncdir.a
+qregex.o
