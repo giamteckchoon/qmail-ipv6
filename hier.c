@@ -3,6 +3,8 @@
 #include "auto_uids.h"
 #include "fmt.h"
 #include "fifo.h"
+#include "ipalloc.h"
+#include "tcpto.h"
 
 /* Fool auto_uids.o into pulling the uid/gid files from the subdirectory
  * "owners" in the current directory.  This requires that the command
@@ -82,7 +84,7 @@ void hier()
   dsplit("queue/remote",auto_uids,0700);
 
   d(auto_qmail,"queue/lock",auto_uidq,auto_gidq,0750);
-  z(auto_qmail,"queue/lock/tcpto",1024,auto_uidr,auto_gidq,0644);
+  z(auto_qmail,"queue/lock/tcpto",sizeof(struct tcpto_buf)*TCPTO_BUFSIZ,auto_uidr,auto_gidq,0644);
   z(auto_qmail,"queue/lock/sendmutex",0,auto_uids,auto_gidq,0600);
   p(auto_qmail,"queue/lock/trigger",auto_uids,auto_gidq,0622);
 
