@@ -4,7 +4,11 @@ DEFINES=-DEXTERNAL_TODO # use to enable external todo
 
 SHELL=/bin/sh
 
-default: it
+default: syncdir it
+
+syncdir: compile makelib
+	./compile syncdir.c
+	./makelib libsyncdir.a syncdir.o
 
 addresses.0: \
 addresses.5

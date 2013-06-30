@@ -385,3 +385,5 @@ setup
 check
 qmail-todo.o
 qmail-todo
+syncdir.o
+libsyncdir.a
